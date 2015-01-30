@@ -1,0 +1,20 @@
+c:\users\uc172070\documents\visual studio 2010\Projects\HTML-Editor\HTML-Editor\bin\Debug\HTML-Editor.exe
+c:\users\uc172070\documents\visual studio 2010\Projects\HTML-Editor\HTML-Editor\bin\Debug\HTML-Editor.pdb
+c:\users\uc172070\documents\visual studio 2010\Projects\HTML-Editor\HTML-Editor\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\uc172070\documents\visual studio 2010\Projects\HTML-Editor\HTML-Editor\obj\x86\Debug\HTML_Editor.FormMain.resources
+c:\users\uc172070\documents\visual studio 2010\Projects\HTML-Editor\HTML-Editor\obj\x86\Debug\HTML_Editor.Properties.Resources.resources
+c:\users\uc172070\documents\visual studio 2010\Projects\HTML-Editor\HTML-Editor\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\uc172070\documents\visual studio 2010\Projects\HTML-Editor\HTML-Editor\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\uc172070\documents\visual studio 2010\Projects\HTML-Editor\HTML-Editor\obj\x86\Debug\HTML-Editor.exe
+c:\users\uc172070\documents\visual studio 2010\Projects\HTML-Editor\HTML-Editor\obj\x86\Debug\HTML-Editor.pdb
+C:\Users\uC172070\Desktop\Compiler_Fixed_I_Project\HTML_Editor\HTML-Editor\HTML-Editor\obj\x86\Debug\HTML-Editor.exe
+C:\Users\uC172070\Desktop\Compiler_Fixed_I_Project\HTML_Editor\HTML-Editor\HTML-Editor\obj\x86\Debug\HTML-Editor.pdb
+C:\Users\uC172070\Desktop\Compiler_Fixed_I_Project\HTML_Editor\File for Build\HTML-Editor\obj\x86\Debug\HTML-Editor.exe
+C:\Users\uC172070\Desktop\Compiler_Fixed_I_Project\HTML_Editor\File for Build\HTML-Editor\obj\x86\Debug\HTML-Editor.pdb
+C:\Users\uC172070\Desktop\Compiler_Fixed_I_Project\HTML_Editor\File for Build\HTML-Editor\bin\Debug\HTML-Editor.exe
+C:\Users\uC172070\Desktop\Compiler_Fixed_I_Project\HTML_Editor\File for Build\HTML-Editor\bin\Debug\HTML-Editor.pdb
+C:\Users\uC172070\Desktop\Compiler_Fixed_I_Project\HTML_Editor\File for Build\HTML-Editor\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\uC172070\Desktop\Compiler_Fixed_I_Project\HTML_Editor\File for Build\HTML-Editor\obj\x86\Debug\HTML_Editor.FormMain.resources
+C:\Users\uC172070\Desktop\Compiler_Fixed_I_Project\HTML_Editor\File for Build\HTML-Editor\obj\x86\Debug\HTML_Editor.Properties.Resources.resources
+C:\Users\uC172070\Desktop\Compiler_Fixed_I_Project\HTML_Editor\File for Build\HTML-Editor\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\uC172070\Desktop\Compiler_Fixed_I_Project\HTML_Editor\File for Build\HTML-Editor\obj\x86\Debug\GenerateResource.write.1.tlog

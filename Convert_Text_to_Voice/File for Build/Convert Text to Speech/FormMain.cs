@@ -1,0 +1,78 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Speech;
+using System.Speech.Synthesis;
+
+namespace Convert_Text_to_Speech
+{
+    public partial class FormMain : Form
+    {
+        public FormMain()
+        {
+            InitializeComponent();
+        }
+        SpeechSynthesizer reader = new SpeechSynthesizer();
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            if (btnPlay.Text == "Play")
+            {
+                if (tbxMessage.Text != "")
+                {
+                    reader.Dispose();
+                    reader = new SpeechSynthesizer();
+                    reader.SpeakAsync(tbxMessage.Text);
+                    btnPlay.Text = "Stop";
+                    btnPause.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Please Enter Some Text !!");
+                }
+            }
+            else
+            {
+                if (reader != null)
+                {
+                    btnPause.Enabled = false;
+                    reader.Dispose();
+                    btnPlay.Text = "Play";
+                }
+            }
+        }
+
+        private void btnPause_Click(object sender, EventArgs e)
+        {
+            if(btnPause.Text== "Pause")
+            {
+                if (reader != null)
+                {
+                    if(reader.State==SynthesizerState.Speaking)
+                    {
+                        reader.Pause();
+                        btnPause.Text = "Resume";
+                        btnPlay.Enabled = false;
+                    }
+                }
+            }
+            else{
+                if (reader != null)
+                {
+                    if (reader.State == SynthesizerState.Paused)
+                    {
+                        btnPlay.Enabled = true;
+                        reader.Resume();
+                        btnPause.Text = "Pause";
+                    }
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,341 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace ConvertBaseNumber
+{
+    public partial class FormMain : Form
+    {
+        public FormMain()
+        {
+            InitializeComponent();
+        }
+
+        private void btnConvert_Click(object sender, EventArgs e)
+        {
+            if (tbxInput.Text.Length < 10)
+            {
+                if (cmbMode.Text == "Base 2 --> Base 8")
+                {
+                    tbxResult.Text = FindBintoOct(2, int.Parse(tbxInput.Text)).ToString();
+                }
+                else if (cmbMode.Text == "Base 2 --> Base 10")
+                {
+                    if (tbxInput.Text.Length < 10)
+                        tbxResult.Text = FindBintoDec(2, int.Parse(tbxInput.Text)).ToString();
+                }
+                else if (cmbMode.Text == "Base 2 --> Base 16")
+                {
+                    if (tbxInput.Text.Length < 10)
+                        tbxResult.Text = FindBintoHex(2, int.Parse(tbxInput.Text)).ToString();
+                }
+                else if (cmbMode.Text == "Base 8 --> Base 2")
+                {
+                    if (tbxInput.Text.Length < 10)
+                        tbxResult.Text = FindOcttoBin(8, int.Parse(tbxInput.Text)).ToString();
+                }
+                else if (cmbMode.Text == "Base 8 --> Base 10")
+                {
+                    if (tbxInput.Text.Length < 10)
+                        tbxResult.Text = FindOcttoDec(8, int.Parse(tbxInput.Text)).ToString();
+                }
+                else if (cmbMode.Text == "Base 8 --> Base 16")
+                {
+                    if (tbxInput.Text.Length < 10)
+                        tbxResult.Text = FindOcttoHex(8, int.Parse(tbxInput.Text)).ToString();
+                }
+                else if (cmbMode.Text == "Base 10 --> Base 2")
+                {
+                    if (tbxInput.Text.Length < 10)
+                        tbxResult.Text = FindDectoBin(int.Parse(tbxInput.Text)).ToString();
+                }
+                else if (cmbMode.Text == "Base 10 --> Base 8")
+                {
+                    if (tbxInput.Text.Length < 10)
+                        tbxResult.Text = FindDectoOct(int.Parse(tbxInput.Text)).ToString();
+                }
+                else if (cmbMode.Text == "Base 10 --> Base 16")
+                {
+                    if (tbxInput.Text.Length < 10)
+                        tbxResult.Text = FindDectoHex(int.Parse(tbxInput.Text)).ToString();
+                }
+                else if (cmbMode.Text == "Base 16 --> Base 2")
+                {
+                    if (tbxInput.Text.Length < 10)
+                        tbxResult.Text = FindHextoBin(16, tbxInput.Text).ToString();
+                }
+                else if (cmbMode.Text == "Base 16 --> Base 8")
+                {
+                    if (tbxInput.Text.Length < 10)
+                        tbxResult.Text = FindHextoOct(16, tbxInput.Text.ToUpper()).ToString();
+                }
+                else if (cmbMode.Text == "Base 16 --> Base 10")
+                {
+                    if (tbxInput.Text.Length < 10)
+                        tbxResult.Text = FindHextoDec(16, tbxInput.Text.ToUpper()).ToString();
+                }
+                else
+                {
+                }
+            }
+            else
+                MessageBox.Show("Input Number Can't Entered More Than 9 Charactors");
+        }
+
+        private void cmbMode_TextChanged(object sender, EventArgs e)
+        {
+            tbxInput.Text = "";
+            tbxResult.Text = "";
+            if ((tbxInput.Text != "") && (cmbMode.Text != "What Base You Need to Convert"))
+            {
+                btnConvert.Enabled = true;
+            }
+            else
+            {
+                btnConvert.Enabled = false;
+            }
+        }
+
+        private void tbxInput_TextChanged(object sender, EventArgs e)
+        {
+            if ((tbxInput.Text != "") && (cmbMode.Text != "What Base You Need to Convert"))
+            {
+                btnConvert.Enabled = true;
+            }
+            else
+            {
+                btnConvert.Enabled = false;
+            }
+        }
+
+        private static string FindBintoOct(int inputBNum, int number)
+        {
+            string bintodec = FindDec(inputBNum, number);
+            int dectobin = int.Parse(bintodec);
+            string result = FindDectoOct(dectobin);
+            return result;
+        }
+
+        private static string FindBintoDec(int inputBNum, int number)
+        {
+            string result = FindDec(inputBNum, number);
+            return result;
+        }
+
+        private static string FindBintoHex(int inputBNum, int number)
+        {
+            string bintodec = FindDec(inputBNum, number);
+            int dectohex = int.Parse(bintodec);
+            string result = FindDectoHex(dectohex);
+            return result;
+        }
+
+        private static string FindOcttoBin(int inputBNum, int number)
+        {
+            string octtodec = FindDec(inputBNum, number);
+            int dectobin = int.Parse(octtodec);
+            string result = FindDectoBin(dectobin);
+            return result;
+        }
+
+        private static string FindOcttoDec(int inputBNum, int number)
+        {
+            string result = FindDec(inputBNum, number);
+            return result;
+        }
+
+        private static string FindOcttoHex(int inputBNum, int number)
+        {
+            string octtodec = FindDec(inputBNum, number);
+            int dectohex = int.Parse(octtodec);
+            string result = FindDectoHex(dectohex);
+            return result;
+        }
+
+        private static string FindDectoBin(int number)
+        {
+            int Numden = number;
+            string result = "";
+            do
+            {
+                if (Numden >= 2)
+                    result = (Numden % 2) + result;
+                else
+                    result = Numden + result;
+                Numden /= 2;
+            } while (Numden > 0);
+            return result;
+        }
+
+        private static string FindDectoOct(int number)
+        {
+            int Numden = number;
+            string result = "";
+            do
+            {
+                if (Numden >= 8)
+                    result = (Numden % 8) + result;
+                else
+                    result = Numden + result;
+                Numden /= 8;
+            } while (Numden > 0);
+            return result;
+        }
+
+        private static string FindDectoHex(int number)
+        {
+            int Numden = number;
+            string result = "";
+            do
+            {
+                if (Numden >= 16)
+                {
+                    if (Numden % 16 == 10)
+                        result = "A" + result;
+                    else if (Numden % 16 == 11)
+                        result = "B" + result;
+                    else if (Numden % 16 == 12)
+                        result = "C" + result;
+                    else if (Numden % 16 == 13)
+                        result = "D" + result;
+                    else if (Numden % 16 == 14)
+                        result = "E" + result;
+                    else if (Numden % 16 == 15)
+                        result = "F" + result;
+                    else
+                        result = (Numden % 16) + result;
+                }
+                else
+                    result = Numden + result;
+                Numden /= 16;
+            } while (Numden > 0);
+            return result;
+        }
+
+        private static string FindHextoBin(int inputBNum, string numberhex)
+        {
+            string hextodec = FindHextoDec(inputBNum, numberhex);
+            int dectobin = int.Parse(hextodec);
+            string result = FindDectoBin(dectobin);
+            return result;
+        }
+
+        private static string FindHextoOct(int inputBNum, string numberhex)
+        {
+            string hextodec = FindHextoDec(inputBNum, numberhex);
+            int dectoOct = int.Parse(hextodec);
+            string result = FindDectoOct(dectoOct);
+            return result;
+        }
+
+        private static string FindHextoDec(int inputBNum, string numberhex)
+        {
+            string defnum = numberhex;
+            int val = 0, j = 0;
+            for (int i = (defnum.Length - 1); i >= 0; i--, j++)
+            {
+                if (defnum.Substring(i, 1) == "A" || defnum.Substring(i, 1) == "a")
+                    val += 10 * Convert.ToInt32(Math.Pow(inputBNum, j));
+                else if (defnum.Substring(i, 1) == "B" || defnum.Substring(i, 1) == "b")
+                    val += 11 * Convert.ToInt32(Math.Pow(inputBNum, j));
+                else if (defnum.Substring(i, 1) == "C" || defnum.Substring(i, 1) == "c")
+                    val += 12 * Convert.ToInt32(Math.Pow(inputBNum, j));
+                else if (defnum.Substring(i, 1) == "E" || defnum.Substring(i, 1) == "d")
+                    val += 13 * Convert.ToInt32(Math.Pow(inputBNum, j));
+                else if (defnum.Substring(i, 1) == "E" || defnum.Substring(i, 1) == "e")
+                    val += 14 * Convert.ToInt32(Math.Pow(inputBNum, j));
+                else if (defnum.Substring(i, 1) == "F" || defnum.Substring(i, 1) == "F")
+                    val += 15 * Convert.ToInt32(Math.Pow(inputBNum, j));
+                else
+                    val += Convert.ToInt32(defnum.Substring(i, 1)) * Convert.ToInt32(Math.Pow(inputBNum, j));
+            }
+            string result = Convert.ToString(val);
+            return result;
+        }
+
+        private static string FindDec(int inputBNum, int number)
+        {
+            string defnum = Convert.ToString(number);
+            int val = 0, j = 0;
+            for (int i = (defnum.Length - 1); i >= 0; i--, j++)
+            {
+                val += Convert.ToInt32(defnum.Substring(i, 1)) * Convert.ToInt32(Math.Pow(inputBNum, j));
+            }
+            string result = Convert.ToString(val);
+            return result;
+        }
+
+        private void tbxInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((cmbMode.Text == "Base 16 --> Base 2") || (cmbMode.Text == "Base 16 --> Base 8") || (cmbMode.Text == "Base 16 --> Base 2"))
+            {
+                if ( ((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57) 
+                    || (int)e.KeyChar == 65
+                    || (int)e.KeyChar == 97
+                    || (int)e.KeyChar == 66
+                    || (int)e.KeyChar == 98
+                    || (int)e.KeyChar == 67
+                    || (int)e.KeyChar == 99
+                    || (int)e.KeyChar == 68
+                    || (int)e.KeyChar == 100
+                    || (int)e.KeyChar == 69
+                    || (int)e.KeyChar == 101
+                    || (int)e.KeyChar == 70
+                    || (int)e.KeyChar == 102
+                    || (int)e.KeyChar == 8
+                    || (int)e.KeyChar ==13 )
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+            else if ((cmbMode.Text == "Base 8 --> Base 2") || (cmbMode.Text == "Base 8 --> Base 10") || (cmbMode.Text == "Base 8 --> Base 16"))
+            {
+                if (((int)e.KeyChar >= 48 && (int)e.KeyChar <= 55)
+                    || (int)e.KeyChar == 8
+                    || (int)e.KeyChar == 13)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+            else if ((cmbMode.Text == "Base 2 --> Base 8") || (cmbMode.Text == "Base 2 --> Base 10") || (cmbMode.Text == "Base 16 --> Base 16"))
+            {
+                if (((int)e.KeyChar >= 48 && (int)e.KeyChar <= 49)
+                    || (int)e.KeyChar == 8
+                    || (int)e.KeyChar == 13)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+            else
+            {
+                if (((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57)
+                    || (int)e.KeyChar == 8
+                    || (int)e.KeyChar == 13)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+    }
+}

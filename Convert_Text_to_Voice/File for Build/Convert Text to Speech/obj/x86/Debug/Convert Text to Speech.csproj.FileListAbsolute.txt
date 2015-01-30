@@ -1,0 +1,11 @@
+c:\users\uc172070\documents\visual studio 2010\Projects\Convert Text to Speech\Convert Text to Speech\bin\Debug\Convert Text to Speech.exe
+c:\users\uc172070\documents\visual studio 2010\Projects\Convert Text to Speech\Convert Text to Speech\bin\Debug\Convert Text to Speech.pdb
+c:\users\uc172070\documents\visual studio 2010\Projects\Convert Text to Speech\Convert Text to Speech\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\uc172070\documents\visual studio 2010\Projects\Convert Text to Speech\Convert Text to Speech\obj\x86\Debug\Convert_Text_to_Speech.FormMain.resources
+c:\users\uc172070\documents\visual studio 2010\Projects\Convert Text to Speech\Convert Text to Speech\obj\x86\Debug\Convert_Text_to_Speech.Properties.Resources.resources
+c:\users\uc172070\documents\visual studio 2010\Projects\Convert Text to Speech\Convert Text to Speech\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\uc172070\documents\visual studio 2010\Projects\Convert Text to Speech\Convert Text to Speech\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\uc172070\documents\visual studio 2010\Projects\Convert Text to Speech\Convert Text to Speech\obj\x86\Debug\Convert Text to Speech.exe
+c:\users\uc172070\documents\visual studio 2010\Projects\Convert Text to Speech\Convert Text to Speech\obj\x86\Debug\Convert Text to Speech.pdb
+C:\Users\uC172070\Desktop\Compiler_Fixed_I_Project\Convert_Text_to_Voice\File for Build\Convert Text to Speech\obj\x86\Debug\Convert Text to Speech.exe
+C:\Users\uC172070\Desktop\Compiler_Fixed_I_Project\Convert_Text_to_Voice\File for Build\Convert Text to Speech\obj\x86\Debug\Convert Text to Speech.pdb
